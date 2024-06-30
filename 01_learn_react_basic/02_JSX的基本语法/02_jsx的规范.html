@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <!-- cdn引入 -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <!-- 使用jsx编写react -->
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+  <script type="text/babel">
+    class App extends React.Component {
+      constructor() {
+        super()
+        this.state = {
+          message: 'hello React'
+        }
+      }
+      // 渲染内容
+      render() {
+        const { message } = this.state
+        return (
+          // 只能有一个根元素 vue2里只能有一个根元素 vue3可以有多个根元素
+          // 方便阅读会在jsx外层包裹一个()
+          // jsx中标签可以是单标签也可以是多标签单标签必须以/>结尾
+          <div>
+            <h4>{message}</h4>
+          </div>
+        )
+      }
+    }
+
+    ReactDOM.createRoot(document.querySelector('#root')).render(<App />)
+  </script>
+</body>
+
+</html>

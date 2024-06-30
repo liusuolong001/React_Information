@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <!-- cdn引入 -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <!-- 使用jsx编写react -->
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+  <script type="text/babel">
+    class App extends React.Component {
+      constructor() {
+        super()
+        this.state = {
+          movies: ['海贼王', '火影忍者', '流浪地球', '杀破狼']
+        }
+      }
+      // 渲染内容
+      render() {
+        // div只能有一个
+        return (
+          <div>
+            <ul>
+              {this.state.movies.map((it) => {
+                return <li>{it}</li>
+              })}
+            </ul>
+          </div>
+        )
+      }
+    }
+
+    ReactDOM.createRoot(document.querySelector('#root')).render(<App />)
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+/* 进入动画 */
+.cartoon-enter {
+    opacity: 0;
+}
+
+/* 进入中动画 */
+.cartoon-enter-active {
+    opacity: 1;
+    transition: opacity 3s ease;
+}
+
+
+/* 离开动画 */
+.cartoon-exit {
+    opacity: 1;
+}
+
+/* 离开中动画 */
+.cartoon-exit-active {
+    opacity: 0;
+    transition: opacity 3s ease;
+}

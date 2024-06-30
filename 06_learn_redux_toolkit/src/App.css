@@ -1,0 +1,26 @@
+.appPages {
+  display: flex;
+}
+
+.appPages>div {
+  flex: 1;
+}
+
+.listExpand {
+  background-color: red;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.childrenListExpand {
+  background-color: blue;
+  margin-top: 10px;
+}
+
+.isBlock {
+  display: block;
+}
+
+.isHide {
+  display: Hide;
+}

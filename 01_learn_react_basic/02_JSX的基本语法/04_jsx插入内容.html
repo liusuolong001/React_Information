@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <!-- cdn引入 -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <!-- 使用jsx编写react -->
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+  <script type="text/babel">
+    class App extends React.Component {
+      constructor() {
+        super()
+        this.state = {
+          message: 'hello React',
+          a: undefined,
+          b: false,
+          c: null,
+          friends: {
+            name: 'yinhao'
+          },
+          status: false,
+          movies: ['路飞', '索隆', '乔巴']
+        }
+      }
+      // 渲染内容
+      render() {
+        const { message } = this.state
+        const { a, b, c } = this.state
+        const { friends } = this.state
+        const { status } = this.state
+        const { movies } = this.state
+        return (
+          <div>
+            {/* 类型为null boolean undefined时不会只能是在页面上若想展示需要转化成字符串通过tostring或者其他方法 */}
+            <h4>{message}</h4>
+            <h4>{a}</h4>
+            <h4>{b + ''}</h4>
+            <h4>{c}</h4>
+            {/*object对象不能作为子元素进行显示 */}
+            {/*取object里面的key值 */}
+            <h4>{Object.keys(friends)[0]}</h4>
+            {/*运算表达式 */}
+            <h4>{20 + 40}</h4>
+            {/*三元运算符*/}
+            <h4>{status ? '成功' : '失败'}</h4>
+            {/*执行一个函数*/}
+            <ul>
+              {movies.map((it) => <li>{it}</li>)}
+            </ul>
+          </div>
+        )
+      }
+    }
+
+    ReactDOM.createRoot(document.querySelector('#root')).render(<App />)
+  </script>
+</body>
+
+</html>
